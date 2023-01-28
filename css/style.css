@@ -140,6 +140,7 @@ h1 {
     align-items: center;
     flex-direction: row;
     overflow: hidden;
+    text-decoration: none;
 }
 
 .contact-info > img {
@@ -294,10 +295,32 @@ input[type=submit] {
     height: 44px;
     border-radius: 6px;
     -webkit-transition: background .3s ease-in-out;
-    transition: background .3s ease-in-out
+    transition: background .3s ease-in-out;
 }
 
 input[type=submit]:focus, input[type=submit]:hover {
+    background: #33404a
+}
+
+.free-internet {
+    padding: 20px 50px;
+    background: #3e4d59;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    height: 44px;
+    border-radius: 6px;
+    -webkit-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.free-internet:focus, .free-internet:hover {
     background: #33404a
 }
 

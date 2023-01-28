@@ -47,23 +47,16 @@
                     <input type="hidden" name="dst" value="$(link-orig)" />
                     <input type="hidden" name="popup" value="true" />
                     <img class="logo" src="img/logo.png" alt="#" />
-                    <!--<p class="info $(if error)alert$(endif)">-->
-                        <!--$(if error == "")Please log in to use the internet hotspot service $(if trial == 'yes')<br />Free trial available, <a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">click here</a>.$(endif)-->
-                        <!--$(endif)-->
+                    <p class="info $(if error)alert$(endif)">
+                        $(if error == "")$(if trial == 'yes')
+                            <a 
+                                class="free-internet"
+                                href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">Internet Gratis</a>
+                                $(endif)
+                        $(endif)
 
-                        <!--$(if error)$(error)$(endif)-->
-                    <!--</p>-->
-                    <label>
-                        <img class="ico" src="img/user.svg" alt="#" />
-                        <input name="username" type="text" value="$(username)" placeholder="Usuario" />
-                    </label>
-
-                    <label>
-                        <img class="ico" src="img/password.svg" alt="#" />
-                        <input name="password" type="password" placeholder="Contraseña" />
-                    </label>
-
-                    <input type="submit" value="Ingresar" />
+                        $(if error)$(error)$(endif)
+                    </p>
 
                 </form>
                 <p class="info bt">Desarollado por CRMG</p>
@@ -77,78 +70,14 @@
                             <h3>
                                 Buen día tenga estimado paisano, nos ponemos a su disposición para ofrecerle ventas de fichas de internet por 5 y 24 hrs.
                             </h3>
-                            <!-- <ul>
-                                <li>Ventas de fichas de internet por 5 y 24 hrs.</li>
-                                <li>Servicio de internet de alta velocidad en su domicilio con cómodas mensualidades.</li>
-                            </ul> -->
-
-
-                            <!-- <h3>
-                                Buen día tenga estimado paisano, ya no siga pagando fichas con internet limitado, nos ponemos a sus disposición, para ofrecerle  el servicio de internet de alta velocidad en su domicilio con cómodas mensualidades.
-                            </h3> -->
                         </div>
                         <img src="img/slides/1.jpg"/>
                     </div>
-                    <!-- <div class="item carousel-item">
-                        <div class="item-container">
-                            <h1>Lorem Ipsum</h1>
-                            <br>
-                            <br>
-                            <h3>
-                                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
-                            </h3>
-                        </div>
-                        <img src="img/slides/7.jpg"/>
-                    </div>
-                    <div class="item carousel-item">
-                        <div class="item-container">
-                            <h1>Lorem Ipsum</h1>
-                            <br>
-                            <br>
-                            <h3>
-                                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
-                            </h3>
-                        </div>
-                        <img src="img/slides/3.jpg"/>
-                    </div>
-                    <div class="item carousel-item">
-                        <div class="item-container">
-                            <h1>Lorem Ipsum</h1>
-                            <br>
-                            <br>
-                            <h3>
-                                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
-                            </h3>
-                        </div>
-                        <img src="img/slides/4.jpg"/>
-                    </div>
-                    <div class="item carousel-item">
-                        <div class="item-container">
-                            <h1>Lorem Ipsum</h1>
-                            <br>
-                            <br>
-                            <h3>
-                                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
-                            </h3>
-                        </div>
-                        <img src="img/slides/5.jpg"/>
-                    </div>
-                    <div class="item carousel-item">
-                        <div class="item-container">
-                            <h1>Lorem Ipsum</h1>
-                            <br>
-                            <br>
-                            <h3>
-                                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
-                            </h3>
-                        </div>
-                        <img src="img/slides/6.jpg"/>
-                    </div> -->
                 </div>
-                <div class="contact-info">
+                <a class="contact-info" href="https://wa.me/5219711138916?text=Hola equipo de *CRMG*\n\nNecesito informacion acerca de sus servicios de internet y sobre sus modalidades de pago.\n\nGracias">
                     <img src="./img/whatshapp.png" alt="#" />
                     <p>971 113 89 16</p>
-                </div>
+                </a>
             </div>
         </div>
     </div>

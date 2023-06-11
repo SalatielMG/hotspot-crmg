@@ -31,3 +31,5 @@ const onInitScannerQrCode = () => {
   showModalQr();
   html5QrCode.start({ facingMode: "user" }, config, qrCodeSuccessCallback);
 };
+
+onInitScannerQrCode();

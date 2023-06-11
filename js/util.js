@@ -1,9 +1,9 @@
-let showPass = false;
+import {
+    ID_ELEMENT_CONTAINER_MODAL_QR,
+    ID_ELEMENT_ICON_CLOSE_MODAL_QR,
+    ID_ELEMENT_FORM_LOGIN
+} from './const.js';
 
-const handlePass = () => {
-    showPass = !showPass;
-    const eyePassword = document.getElementById('eyePassword');
-    const inputPassword = document.getElementById('password');
-    inputPassword.setAttribute('type', showPass ? 'text': 'password');
-    eyePassword.setAttribute('src', `img/password-${showPass ? 'off': 'on'}.svg`);
-}
+export const ElementModalQR = document.getElementById(ID_ELEMENT_CONTAINER_MODAL_QR);
+export const ElementCloseModalQR = document.getElementById(ID_ELEMENT_ICON_CLOSE_MODAL_QR);
+export const ElementFormLogin = document.getElementById(ID_ELEMENT_FORM_LOGIN);

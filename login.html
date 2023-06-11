@@ -30,6 +30,7 @@
     </form>
 
     <script src="/md5.js"></script>
+    <script src="./js/util.js"></script>
     <script>
         function doLogin() {
             document.sendin.username.value = document.login.username.value;
@@ -60,7 +61,8 @@
 
                     <label>
                         <img class="ico" src="img/password.svg" alt="#" />
-                        <input name="password" type="password" placeholder="Contraseña" />
+                        <input id="password" name="password" type="password" placeholder="Contraseña" />
+                        <img id="eyePassword" class="ico-eye" src="img/password-on.svg" alt="#" onclick="handlePass()"/>
                     </label>
 
                     <input type="submit" value="Ingresar" />

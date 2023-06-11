@@ -66,6 +66,19 @@ p::first-letter {
     margin-left: 14px
 }
 
+input[id=password] {
+    padding: 3px 40px 3px 40px!important;
+}
+
+.ico-eye {
+    height: 16px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 13px;
+    margin-right: 14px
+}
+
 .logo {
     max-width: 200px;
     display: block;

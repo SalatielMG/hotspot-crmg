@@ -28,6 +28,12 @@ const closeModalQr = () => {
 }
 
 const onInitScannerQrCode = () => {
-  showModalQr();
-  html5QrCode.start({ facingMode: "user" }, config, qrCodeSuccessCallback);
+  if (
+    navigator.userAgent.match(/Android/i) ||
+    navigator.userAgent.match(/iPhone/i)
+  ) {
+    window.open('intent://salatielmg.github.io/hotspot-crmg#Intent;scheme=https;package=com.android.chrome;end');
+  } else {
+    window.open('https://salatielmg.github.io/hotspot-crmg');
+  }
 };

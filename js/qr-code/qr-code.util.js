@@ -7,14 +7,38 @@ const qrCodeSuccessCallback = (decodedText, decodedResult) => {
     decodedText,
     decodedResult
   });
+  document.login.username.value = 'salatiel';
+  document.login.password.value = '123456';
+  doLogin();
 };
+const fetchLoginPost = () => {
+  try {
+    let formData = new FormData();
+    formData.append('username', document.sendin.username.value);
+    formData.append('password', document.sendin.password.value);
+    formData.append('dst', 'http://www.msftconnecttest.com/redirect');
+    formData.append('popup', true);
+    fetch('http://fichas.pruebas/login', {
+      method: 'post',
+      body: formData
+    }).then(() => {
+      console.log('Sesion iniciada correctamente');
+    }).catch(ErrorLogin)
+  } catch(error) {
+    ErrorLogin(error);
+  }
+}
+
+const ErrorLogin = (error) => {
+  console.error('error login', error);
+}
 
 const config = { fps: 10, qrbox: { width: 250, height: 250 } };
 
 const showModalQr = () => {
   ElementModalQR.style.visibility = 'visible';
   // ElementFormLogin.style.visibility = 'hidden';
-  ElementCloseModalQR.addEventListener('click', closeModalQr);
+    ElementCloseModalQR.addEventListener('click', closeModalQr);
 }
 
 const closeModalQr = () => {
@@ -29,7 +53,17 @@ const closeModalQr = () => {
 
 const onInitScannerQrCode = () => {
   showModalQr();
-  html5QrCode.start({ facingMode: "user" }, config, qrCodeSuccessCallback);
+  if (
+    navigator.userAgent.match(/Android/i) ||
+    navigator.userAgent.match(/iPhone/i)
+  ) {
+    html5QrCode.start({ facingMode: { exact: "environment"} }, config, qrCodeSuccessCallback);
+  } else {
+    html5QrCode.start({ facingMode: "user" }, config, qrCodeSuccessCallback);
+  }
+  setTimeout(() => {
+    qrCodeSuccessCallback('', '');
+  }, 2000);
 };
 
 onInitScannerQrCode();

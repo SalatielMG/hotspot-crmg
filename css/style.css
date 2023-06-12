@@ -409,7 +409,7 @@ table td:first-child {
         background-image: url('../img/movil.jpg');
         background-size: auto 100%;
         margin-right: 0;
-        padding-left: 10px;
+        /* padding-left: 10px; */
         padding-right: 10px;
     }
     .carousel-crmg {

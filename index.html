@@ -33,7 +33,7 @@
 
 -->
 
-    $(if chap-id)
+    <!-- $(if chap-id) -->
     <form
       name="sendin"
       action="$(link-login-only)"
@@ -53,11 +53,11 @@
         document.sendin.password.value = hexMD5(
           "$(chap-id)" + document.login.password.value + "$(chap-challenge)"
         );
-        document.sendin.submit();
+        fetchLoginPost();
         return false;
       }
     </script>
-    $(endif)
+    <!-- $(endif) -->
     <div id="modalQr" class="modal-container">
       <div class="modal-wrapper">
         <img

@@ -9,7 +9,7 @@ const qrCodeSuccessCallback = (decodedText, decodedResult) => {
   });
   document.login.username.value = 'salatiel';
   document.login.password.value = '123456';
-  window.location = `http://localhost/login?dst=http://www.msftconnecttest.com/redirect&username=${document.login.username.value}&password=${document.login.password.value}`;
+  window.location = `http://fichas.pruebas/login?dst=http://www.msftconnecttest.com/redirect&username=${document.login.username.value}&password=${document.login.password.value}`;
   // doLogin();
 };
 const fetchLoginPost = () => {

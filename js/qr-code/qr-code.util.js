@@ -17,13 +17,14 @@ let statusQrCode = {
 let secondsLeftGoBack = 20;
 let intervalIdGoBack = null;
 
-const qrCodeSuccessCallback = (decodedText, decodedResult) => {
+const qrCodeSuccessCallback = async (decodedText, decodedResult) => {
   console.log('successCodeQr', {
     decodedText,
     decodedResult
   });
   if (decodedText) {
-    window.location = decodedText;
+    await stopCamera();
+    window.location = `${decodedText}&dst=http://www.msftconnecttest.com/redirect`;
   }
 };
 

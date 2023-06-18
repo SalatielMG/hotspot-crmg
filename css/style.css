@@ -297,7 +297,7 @@ input[type=password]:focus, input[type=text]:focus {
     opacity: .4
 }
 
-input[type=submit] {
+input[type=submit], .btn-scanner-qr {
     background: #3e4d59;
     color: #fff;
     border: 0;
@@ -310,8 +310,21 @@ input[type=submit] {
     transition: background .3s ease-in-out
 }
 
-input[type=submit]:focus, input[type=submit]:hover {
+input[type=submit]:focus,
+input[type=submit]:hover
+{
     background: #33404a
+}
+
+.btn-scanner-qr {
+    background: #007bdf;
+    color: #fff;
+    margin-top: 20px;
+}
+
+.btn-scanner-qr:hover
+{
+    background: #004f8b
 }
 
 table {
@@ -461,7 +474,4 @@ table td:first-child {
 
 .owl-carousel .owl-stage {
     overflow-x: auto;
-}
-
-.login-container {
 }

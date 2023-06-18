@@ -1,19 +1,31 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <meta http-equiv="pragma" content="no-cache" />
     <meta http-equiv="expires" content="-1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CRMG - Log in</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="plugins/owlcarousel2-2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="plugins/owlcarousel2-2.3.4/assets/owl.theme.default.min.css">
-</head>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="plugins/owlcarousel2-2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="plugins/owlcarousel2-2.3.4/assets/owl.theme.default.min.css"
+    />
+    <link rel="stylesheet" href="css/qr-code.css" />
+    <!-- <script src="js/qr-code/html5-qrcode.min.js" type="text/javascript"></script> -->
+    <!-- <script src="./js/util.js"></script> -->
+    <script
+      src="js/qr-code/html5-qrcode.min.js"
+      type="text/javascript"
+    ></script>
+    <!-- <script src="js/qr-code/qr-code.util.js" type="module"></script> -->
+  </head>
 
-<body>
-
+  <body>
     <!-- two other colors
 
 <body class="lite">
@@ -22,156 +34,125 @@
 -->
 
     $(if chap-id)
-    <form name="sendin" action="$(link-login-only)" method="post" style="display:none">
-        <input type="hidden" name="username" placeholder="Usuario"/>
-        <input type="hidden" name="password"  placeholder="Contraseña"/>
-        <input type="hidden" name="dst" value="$(link-orig)" />
-        <input type="hidden" name="popup" value="true" />
+    <form
+      name="sendin"
+      action="$(link-login-only)"
+      method="post"
+      style="display: none"
+    >
+      <input type="hidden" name="username" placeholder="Usuario" />
+      <input type="hidden" name="password" placeholder="Contraseña" />
+      <input type="hidden" name="dst" value="$(link-orig)" />
+      <input type="hidden" name="popup" value="true" />
     </form>
 
     <script src="/md5.js"></script>
-    <script src="./js/util.js"></script>
     <script>
-        function doLogin() {
-            document.sendin.username.value = document.login.username.value;
-            document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
-            document.sendin.submit();
-            return false;
-        }
-
+      function doLogin() {
+        document.sendin.username.value = document.login.username.value;
+        document.sendin.password.value = hexMD5(
+          "$(chap-id)" + document.login.password.value + "$(chap-challenge)"
+        );
+        document.sendin.submit();
+        return false;
+      }
     </script>
     $(endif)
-    <div class="ie-fixMinHeight">
-        <div class="main">
-            <div class="wrap animated fadeIn login-container">
-                <form name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
-                    <input type="hidden" name="dst" value="$(link-orig)" />
-                    <input type="hidden" name="popup" value="true" />
-                    <img class="logo" src="img/logo.png" alt="#" />
-                    <!--<p class="info $(if error)alert$(endif)">-->
-                        <!--$(if error == "")Please log in to use the internet hotspot service $(if trial == 'yes')<br />Free trial available, <a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">click here</a>.$(endif)-->
-                        <!--$(endif)-->
-
-                        <!--$(if error)$(error)$(endif)-->
-                    <!--</p>-->
-                    <label>
-                        <img class="ico" src="img/user.svg" alt="#" />
-                        <input name="username" type="text" value="$(username)" placeholder="Usuario" />
-                    </label>
-
-                    <label>
-                        <img class="ico" src="img/password.svg" alt="#" />
-                        <input id="password" name="password" type="password" placeholder="Contraseña" />
-                        <img id="eyePassword" class="ico-eye" src="img/password-on.svg" alt="#" onclick="handlePass()"/>
-                    </label>
-
-                    <input type="submit" value="Ingresar" />
-
-                </form>
-                <p class="info bt">Desarollado por CRMG</p>
-
-            </div>
-            <div class="carousel-crmg animated fadeIn">
-                <div class="owl-carousel owl-theme">
-                    <div class="item carousel-item">
-                        <div class="item-container">
-                            <h1>INTERNET RESIDENCIAL</h1>
-                            <h3>
-                                Buen día tenga estimado paisano, nos ponemos a su disposición para ofrecerle ventas de fichas de internet por 5 y 24 hrs.
-                            </h3>
-                            <!-- <ul>
-                                <li>Ventas de fichas de internet por 5 y 24 hrs.</li>
-                                <li>Servicio de internet de alta velocidad en su domicilio con cómodas mensualidades.</li>
-                            </ul> -->
-
-
-                            <!-- <h3>
-                                Buen día tenga estimado paisano, ya no siga pagando fichas con internet limitado, nos ponemos a sus disposición, para ofrecerle  el servicio de internet de alta velocidad en su domicilio con cómodas mensualidades.
-                            </h3> -->
-                        </div>
-                        <img src="img/slides/1.jpg"/>
-                    </div>
-                    <!-- <div class="item carousel-item">
-                        <div class="item-container">
-                            <h1>Lorem Ipsum</h1>
-                            <br>
-                            <br>
-                            <h3>
-                                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
-                            </h3>
-                        </div>
-                        <img src="img/slides/7.jpg"/>
-                    </div>
-                    <div class="item carousel-item">
-                        <div class="item-container">
-                            <h1>Lorem Ipsum</h1>
-                            <br>
-                            <br>
-                            <h3>
-                                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
-                            </h3>
-                        </div>
-                        <img src="img/slides/3.jpg"/>
-                    </div>
-                    <div class="item carousel-item">
-                        <div class="item-container">
-                            <h1>Lorem Ipsum</h1>
-                            <br>
-                            <br>
-                            <h3>
-                                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
-                            </h3>
-                        </div>
-                        <img src="img/slides/4.jpg"/>
-                    </div>
-                    <div class="item carousel-item">
-                        <div class="item-container">
-                            <h1>Lorem Ipsum</h1>
-                            <br>
-                            <br>
-                            <h3>
-                                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
-                            </h3>
-                        </div>
-                        <img src="img/slides/5.jpg"/>
-                    </div>
-                    <div class="item carousel-item">
-                        <div class="item-container">
-                            <h1>Lorem Ipsum</h1>
-                            <br>
-                            <br>
-                            <h3>
-                                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
-                            </h3>
-                        </div>
-                        <img src="img/slides/6.jpg"/>
-                    </div> -->
-                </div>
-                <div class="contact-info">
-                    <img src="./img/whatshapp.png" alt="#" />
-                    <p>971 113 89 16</p>
-                </div>
-            </div>
-        </div>
+    <div id="modalQr" class="modal-container">
+      <div class="modal-wrapper">
+        <img
+          id="closeModalQr"
+          class="btn-close-modal"
+          src="img/close.svg"
+          alt="#"
+        />
+        <p class="info bt first">Escanea el codigo QR</p>
+        <p class="info bt">para iniciar sesión</p>
+        <div id="qr-reader" class="qr-reader-wrapper"></div>
+      </div>
     </div>
-    <div style="">
+    <div class="ie-fixMinHeight">
+      <div class="main">
+        <div class="wrap animated fadeIn login-container">
+          <form
+            name="login"
+            action="$(link-login-only)"
+            method="post"
+            $(if chap-id)
+            onSubmit="return doLogin()"
+            $(endif)
+          >
+            <input type="hidden" name="dst" value="$(link-orig)" />
+            <input type="hidden" name="popup" value="true" />
+            <img class="logo" src="img/logo.png" alt="#" />
+            <!--<p class="info $(if error)alert$(endif)">-->
+            <!--$(if error == "")Please log in to use the internet hotspot service $(if trial == 'yes')<br />Free trial available, <a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">click here</a>.$(endif)-->
+            <!--$(endif)-->
+
+            <!--$(if error)$(error)$(endif)-->
+            <!--</p>-->
+            <label>
+              <img class="ico" src="img/user.svg" alt="#" />
+              <input
+                name="username"
+                type="text"
+                value="$(username)"
+                placeholder="Usuario"
+              />
+            </label>
+
+            <label>
+              <img class="ico" src="img/password.svg" alt="#" />
+              <input
+                id="password"
+                name="password"
+                type="password"
+                placeholder="Contraseña"
+              />
+              <img
+                id="eyePassword"
+                class="ico-eye"
+                src="img/password-on.svg"
+                alt="#"
+                onclick="handlePass()"
+              />
+            </label>
+
+            <input type="submit" value="Ingresar" />
+
+            <button
+              class="btn-scanner-qr"
+              type="button"
+              onclick="onInitScannerQrCode()"
+            >
+              Escanear código <strong>QR</strong>
+            </button>
+          </form>
+          <p class="info bt">Desarollado por CRMG</p>
+        </div>
+        <div class="carousel-crmg animated fadeIn">
+          <div class="owl-carousel owl-theme">
+            <div class="item carousel-item">
+              <div class="item-container">
+                <h1>INTERNET RESIDENCIAL</h1>
+                <h3>
+                  Buen día tenga estimado paisano, nos ponemos a su disposición
+                  para ofrecerle ventas de fichas de internet por 5 y 24 hrs.
+                </h3>
+              </div>
+              <img src="img/slides/1.jpg" />
+            </div>
+          </div>
+          <div class="contact-info">
+            <img src="./img/whatshapp.png" alt="#" />
+            <p>971 113 89 16</p>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="js/jquery-1.8.3.min.js"></script>
     <script src="plugins/owlcarousel2-2.3.4/owl.carousel.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $(".owl-carousel").owlCarousel({
-                // nav: true,
-                items: 1.0001,
-                loop: true,
-                animateOut: 'fadeOut',
-                animateIn: 'flipInX',
-                autoplay: true,
-                autoplayTimeout: 5000,
-                autoplayHoverPause: true
-            });
-        });
-    </script>
-</body>
-
+    <script src="js/main.js" type="text/javascript"></script>
+    <script src="./js/qr-code/qr-code.util.js" type="text/javascript"></script>
+  </body>
 </html>

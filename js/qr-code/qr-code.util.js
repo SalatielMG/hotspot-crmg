@@ -24,7 +24,7 @@ const qrCodeSuccessCallback = async (decodedText, decodedResult) => {
   });
   if (decodedText) {
     await stopCamera();
-    window.location = `${decodedText}&dst=http://www.msftconnecttest.com/redirect`;
+    window.location = `${decodedText}&dst=https://www.google.com.mx`;
   }
 };
 

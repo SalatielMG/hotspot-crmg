@@ -148,7 +148,7 @@ onInit = async () => {
 
 const goBack = () => {
   clearInterval(intervalIdGoBack);
-  window.location = 'http://fichas.pruebas/login';
+  window.location = 'http://crmg.net/login';
 }
 
 onInit();

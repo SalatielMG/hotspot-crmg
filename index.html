@@ -16,6 +16,7 @@
       href="plugins/owlcarousel2-2.3.4/assets/owl.theme.default.min.css"
     />
     <link rel="stylesheet" href="css/qr-code.css" />
+    <link rel="stylesheet" href="css/spinner.css" />
     <!-- <script src="js/qr-code/html5-qrcode.min.js" type="text/javascript"></script> -->
     <!-- <script src="./js/util.js"></script> -->
     <script
@@ -53,22 +54,56 @@
         document.sendin.password.value = hexMD5(
           "$(chap-id)" + document.login.password.value + "$(chap-challenge)"
         );
-        fetchLoginPost();
+        document.sendin.submit();
         return false;
       }
     </script>
     <!-- $(endif) -->
     <div id="modalQr" class="modal-container">
       <div class="modal-wrapper">
-        <img
-          id="closeModalQr"
-          class="btn-close-modal"
-          src="img/close.svg"
-          alt="#"
-        />
-        <p class="info bt first">Escanea el codigo QR</p>
-        <p class="info bt">para iniciar sesión</p>
-        <div id="qr-reader" class="qr-reader-wrapper"></div>
+        <div class="qr-code-wrapper">
+          <img
+            id="closeModalQr"
+            class="btn-close-modal"
+            src="img/close.svg"
+            alt="#"
+          />
+          <h1>
+            Escanea el codigo QR para iniciar sesión
+          </h1>
+          <h1>
+            
+          </h1>
+            <!-- <p class="info bt first" >Escanea el codigo QR</p>
+            <p class="info bt">para iniciar sesión</p> -->
+          <div class="spinner">
+            <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+          </div>
+          
+          <div id="qr-reader" class="qr-reader-wrapper"></div>
+          <div class="controls-camera-container">
+            <label for="selectorCamera">¿Cambiar camara?</label>
+            <select name="selectorCamera" id="selectorCamera"></select>
+          </div>
+        </div>
+        <div class="not-qr-code-wrapper">
+          <h1>
+            Ooops... Lector QR no soportado!
+          </h1>
+          <img
+              src="img/not-found.svg"
+              alt="#"
+              />
+              
+              <p>Porfavor regrese a la pantalla principal e inicie sesion manualmente</p>
+              <button
+              class="btn-scanner-qr return-back"
+              type="button"
+              onclick="goBack()"
+            >
+              Regresar
+            </button>
+        </div>
       </div>
     </div>
     <div class="ie-fixMinHeight">

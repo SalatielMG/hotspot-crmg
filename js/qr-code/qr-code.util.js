@@ -17,11 +17,7 @@ let statusQrCode = {
 let secondsLeftGoBack = 20;
 let intervalIdGoBack = null;
 
-const qrCodeSuccessCallback = async (decodedText, decodedResult) => {
-  console.log('successCodeQr', {
-    decodedText,
-    decodedResult
-  });
+const qrCodeSuccessCallback = async (decodedText) => {
   if (decodedText) {
     await stopCamera();
     window.location = `${decodedText}&dst=https://www.google.com.mx`;
@@ -71,9 +67,7 @@ const intervalGoBack = () => {
       goBack();
     }
     ElementButtonGoBack.textContent = `Regresar (${secondsLeftGoBack}s)`;
-    // ElementButtonGoBack.text = `Regresar (${secondsLeftGoBack}s)`;
     secondsLeftGoBack--;
-    console.warn('secondsLeftGoBack', secondsLeftGoBack);
   }, 1000);
 }
 
@@ -97,7 +91,6 @@ const handleContainerQrCode = () => {
 const getCameras = async () => {
   try {
     cameras = await Html5Qrcode.getCameras();
-    console.info('cameras', cameras);
     if (cameras && cameras.length) {
       cameraActiveId = cameras[0].id;
       if (cameras.length > 1) {
@@ -128,7 +121,6 @@ const onInitScannerQrCode = async () => {
   if (status !== Html5QrcodeScannerState.NOT_STARTED) { 
     await stopCamera();
   }
-  console.warn('status', status, Html5QrcodeScannerState);
   await html5QrCode.start({ deviceId: { exact: cameraActiveId} }, config, qrCodeSuccessCallback);
   statusQrCode.loading = false;
   handleContainerQrCode();

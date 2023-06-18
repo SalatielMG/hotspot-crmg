@@ -3,10 +3,6 @@ const ElementCloseModalQR = document.getElementById('closeModalQr');
 
 const html5QrCode = new Html5Qrcode("qr-reader");
 const qrCodeSuccessCallback = (decodedText, decodedResult) => {
-  console.log('successCode', {
-    decodedText,
-    decodedResult
-  });
 };
 
 const config = { fps: 10, qrbox: { width: 250, height: 250 } };

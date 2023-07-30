@@ -1,0 +1,30 @@
+.add-container {
+    visibility: visible;
+    display: none;
+}
+
+.add-close-modal-icon {
+    color: white;
+}
+.add-img-container {
+    border-radius: 8px;
+    -webkit-transition: width .3s ease-in-out;
+    transition: width .3s ease-in-out;
+}
+
+.omit-ad-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 70%;
+    padding: 12.5px;
+    z-index: 1;
+    text-align: center;
+    background: #232222;
+    color: #fff;
+    border-radius: 6px;
+    -webkit-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
+    cursor: pointer;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}

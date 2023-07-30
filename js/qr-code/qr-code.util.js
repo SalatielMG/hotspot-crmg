@@ -9,7 +9,6 @@ const config = { fps: 10, qrbox: { width: 250, height: 250 } };
 
 const showModalQr = () => {
   ElementModalQR.style.visibility = 'visible';
-  // ElementFormLogin.style.visibility = 'hidden';
   ElementCloseModalQR.addEventListener('click', closeModalQr);
 }
 
@@ -20,10 +19,9 @@ const closeModalQr = () => {
   }).catch((err) => {
     // Stop failed, handle it.
   });
-  // ElementFormLogin.style.visibility = 'visible';
 }
 
-const onInitScannerQrCode = () => {
+export const onInitScannerQrCode = () => {
   if (
     navigator.userAgent.match(/Android/i) ||
     navigator.userAgent.match(/iPhone/i)

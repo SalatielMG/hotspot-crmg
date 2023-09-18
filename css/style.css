@@ -298,6 +298,8 @@ input[type=password]:focus, input[type=text]:focus {
 
 input[type=submit],
 .btn-scanner-qr,
+.btn-free-trial,
+.btn-normal-login,
 .btn-omit-add
 {
     background: #3e4d59;
@@ -318,31 +320,46 @@ input[type=submit]:hover
     background: #33404a
 }
 
+.btn-normal-login,
 .btn-scanner-qr {
     background: #007bdf;
     color: #fff;
     margin-top: 20px;
 }
 
+.btn-normal-login:hover,
 .btn-scanner-qr:hover
 {
     background: #004f8b
 }
 
+.btn-free-trial {
+    background: #00db80;
+    color: #fff;
+    margin-top: 20px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-free-trial:hover
+{
+    background: #018d58
+}
+
 .btn-omit-add {
     background: #ff0000;
-    color: #fff;
+    color: white;
+    text-shadow:
+    1px 1px 1px #004f8b,
+    1px 1px 1px #004f8b;
     position: fixed;
     bottom: 20px;
     right: 20px;
     width: 70%;
     z-index: 10;
-    visibility: hidden;
-}
-
-.btn-scanner-qr:hover
-{
-    background: #004f8b
+    display: none;
 }
 
 table {

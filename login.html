@@ -70,12 +70,13 @@
       </div>
     </div>
     <div id="modalAdd" class="modal-container add-container ">
-      <div class="modal-wrapper animated fadeIn">
-        <img
-        class="add-img-container"
-        src="img/adds/mnt-alan/alan-ad.jpg">
-        
+      <div class="modal-wrapper animated fadeIn" id="modal-wrapper-add">
       </div>
+      <!-- <span
+        class="span-counter-omit-add"
+      >
+        Omitir anuncio en
+      </span> -->
       <button
         class="btn-omit-add"
         type="button"
@@ -88,6 +89,7 @@
       <div class="main">
         <div class="wrap animated fadeIn login-container">
           <form
+            id="form-login-crmg"
             name="login"
             action="$(link-login-only)"
             method="post"
@@ -104,40 +106,19 @@
 
             <!--$(if error)$(error)$(endif)-->
             <!--</p>-->
-            <label>
-              <img class="ico" src="img/user.svg" alt="#" />
-              <input
-                name="username"
-                type="text"
-                value="$(username)"
-                placeholder="Usuario"
-              />
-            </label>
-
-            <label>
-              <img class="ico" src="img/password.svg" alt="#" />
-              <input
-                id="password"
-                name="password"
-                type="password"
-                placeholder="Contraseña"
-              />
-              <img
-                id="eyePassword"
-                class="ico-eye"
-                src="img/password-on.svg"
-                alt="#"
-              />
-            </label>
-
-            <input type="submit" value="Ingresar" />
-
-            <button
-              class="btn-scanner-qr"
-              type="button"
-            >
-              Escanear código <strong>QR</strong>
-            </button>
+            <div id="option-form-choose">
+              <a
+                class="btn-free-trial"
+                href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)"
+              >
+              </a>
+              <button
+                class="btn-normal-login"
+                type="button"
+              >
+                Ingresar con usuario y contraseña
+              </button>
+            </div>
           </form>
           <p class="info bt">Desarollado por CRMG</p>
         </div>

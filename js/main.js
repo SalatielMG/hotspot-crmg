@@ -6,10 +6,18 @@ import {
 import {
   onInitScannerQrCode
 } from './qr-code/qr-code.util.js';
+import {
+  ENVIRONMENT
+} from './conf/environment.js'
 
-const ElementEyePassword = document.getElementById('eyePassword');
+let ElementEyePassword;
+let ElementBTnScannerQr;
+const ElementBtnFreeTrial = document.querySelector('.btn-free-trial');
+const ElementBtnNormalLogin = document.querySelector('.btn-normal-login');
+
 const ElementCarouselContainer = document.getElementById('carousel-crmg-container');
-const ElementBTnScannerQr = document.querySelector('.btn-scanner-qr');
+const ElementOptionFormChoose = document.getElementById('option-form-choose');
+const ElementFormLoginCrmg = document.getElementById('form-login-crmg');
 let showPass = false;
 
 const handlePass = () => {
@@ -61,7 +69,7 @@ const handleItemsCarrousel = () => {
 
 $(document).ready(function () {
   handleItemsCarrousel();
-  $('.owl-carousel').owlCarousel({
+  $('#carousel-crmg-container').owlCarousel({
     // nav: true,
     items: 1.0001,
     loop: true,
@@ -71,8 +79,77 @@ $(document).ready(function () {
     autoplayTimeout: 3500,
     autoplayHoverPause: true,
   });
-  ElementEyePassword.addEventListener('click', handlePass);
-  ElementBTnScannerQr.addEventListener('click', onInitScannerQrCode);
+  handleValidateImplAdd();
   handleQueryParams();
 });
 
+const handleValidateImplAdd = () => {
+  if (!ENVIRONMENT?.adds?.enabled) {
+    showNormalForm();
+    return;
+  }
+  if (ENVIRONMENT?.adds.type === 'DEFAULT') {
+    showNormalForm();
+    return;
+  }
+  const textBtnFreeTrial = ENVIRONMENT?.adds?.textBtnFreeTrial ? ENVIRONMENT.adds.textBtnFreeTrial : 'Conéctese gratis';
+  ElementBtnFreeTrial.innerHTML = `
+    <strong>${textBtnFreeTrial}</strong>
+  `
+  handleListenerActionOptionForm();
+}
+
+const handleListenerActionOptionForm = () => {
+  ElementBtnNormalLogin.addEventListener('click', showNormalForm);
+}
+
+const showNormalForm = () => {
+  hiddenOptionFormChoose();
+  ElementFormLoginCrmg.innerHTML = `${ElementFormLoginCrmg.innerHTML} ${innerHtmlNormalForm()}`;
+  ElementEyePassword = document.getElementById('eyePassword');
+  ElementBTnScannerQr = document.querySelector('.btn-scanner-qr');
+  ElementEyePassword.addEventListener('click', handlePass);
+  ElementBTnScannerQr.addEventListener('click', onInitScannerQrCode);
+}
+
+const hiddenOptionFormChoose = () => {
+  ElementOptionFormChoose.style.display = 'none';
+}
+
+const innerHtmlNormalForm = () =>
+`
+<label>
+  <img class="ico" src="img/user.svg" alt="#" />
+  <input
+    name="username"
+    type="text"
+    value="$(username)"
+    placeholder="Usuario"
+  />
+</label>
+
+<label>
+  <img class="ico" src="img/password.svg" alt="#" />
+  <input
+    id="password"
+    name="password"
+    type="password"
+    placeholder="Contraseña"
+  />
+  <img
+    id="eyePassword"
+    class="ico-eye"
+    src="img/password-on.svg"
+    alt="#"
+  />
+</label>
+
+<input type="submit" value="Ingresar" />
+
+<button
+  class="btn-scanner-qr"
+  type="button"
+>
+  Escanear código <strong>QR</strong>
+</button>
+`;

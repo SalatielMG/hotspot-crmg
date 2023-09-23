@@ -1,7 +1,7 @@
-import { CAROUSEL_ITEMS } from './const/carousel-items.js';
 import {
   handleShowModal,
-  openDetailAdd
+  openDetailAdd,
+  setCurrentIndexMainAdd
 } from './add-util.js';
 import {
   onInitScannerQrCode
@@ -46,12 +46,12 @@ const handleQueryParams = () => {
 
 const handleItemsCarrousel = () => {
   let items = '';
-  CAROUSEL_ITEMS.forEach(({
+  ENVIRONMENT.banner.items.forEach(({
     srcImg,
     title,
     whatsapp
-  }) => {
-    items = `${items}<div class="item carousel-item">
+  }, index) => {
+    items = `${items}<div class="item carousel-item" id="itemAdd-${index}">
       <img src="${srcImg}" />
       <div class="item-container">
         <h1>${title}</h1>
@@ -64,24 +64,33 @@ const handleItemsCarrousel = () => {
     </div>`
   });
   ElementCarouselContainer.innerHTML = items;
-  ElementCarouselContainer.addEventListener('click', openDetailAdd);
+  ElementCarouselContainer.addEventListener('dblclick', openDetailAdd);
 }
 
 $(document).ready(function () {
   handleItemsCarrousel();
   $('#carousel-crmg-container').owlCarousel({
-    // nav: true,
-    items: 1.0001,
-    loop: true,
-    animateOut: "fadeOut",
-    animateIn: "flipInX",
-    autoplay: true,
-    autoplayTimeout: 3500,
-    autoplayHoverPause: true,
+    ...ENVIRONMENT.banner.carouselConfig,
+    onChanged: onChangedCarouselMainAdds
   });
   handleValidateImplAdd();
   handleQueryParams();
 });
+
+const onChangedCarouselMainAdds = (e) => {
+  setTimeout(() => {
+    const currentActive = e.currentTarget.querySelector('.owl-item.active');
+    if (!currentActive) {
+      return;
+    }
+    const carouselItem = currentActive.querySelector('.item.carousel-item');
+    if (!carouselItem) {
+      return;
+    }
+    const dataSplit = carouselItem.id.split('-');
+    setCurrentIndexMainAdd(dataSplit.length > 1 ? Number(dataSplit[1]) : 0);
+  }, 100);
+}
 
 const handleValidateImplAdd = () => {
   if (!ENVIRONMENT?.adds?.enabled) {

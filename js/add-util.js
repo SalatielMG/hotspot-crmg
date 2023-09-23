@@ -1,10 +1,21 @@
 import { ENVIRONMENT } from './conf/environment.js';
+import { 
+    TextOmitAdd,
+    TextCounterBeforeOmitAdd,
+    TextCloseAdd
+} from './util.js';
 const ElementModalAdd = document.getElementById('modalAdd');
 const ElementOmitButtonAdd = document.querySelector('.btn-omit-add');
 
 let intervalAdd;
 let seconds = 0;
 let secondsToShowOmitButton;
+
+let currentIndexMainAdd = 0;
+
+export const getCurrentIndexMainAdd = () => currentIndexMainAdd;
+
+export const setCurrentIndexMainAdd = (value) => currentIndexMainAdd = value;
 
 export const handleShowModal = () => {
     if (!ENVIRONMENT.adds) {
@@ -17,11 +28,10 @@ export const handleShowModal = () => {
             showModal,
             showOmitButton,
             closeModal: {
-                isAutomatic: isAutomaticCloseModal,
                 timeout: timeoutCloseModal
             }
         },
-        imagesAdd
+        srcAdds
     } = ENVIRONMENT.adds;
     if (!enabled) {
         return;
@@ -30,13 +40,13 @@ export const handleShowModal = () => {
     intervalAdd = setInterval(() => {
         switch (seconds) {
             case showModal:
-                iniShowModalAdd(imagesAdd);
+                iniShowModalAdd(srcAdds);
                 break;
             case showOmitButton:
                 showOmitButtonAddText();
                 break;
             case timeoutCloseModal: 
-                stopAdd(isAutomaticCloseModal);
+                stopAdd();
                 break;
         }
         if (isNotShowOmitButton()) {
@@ -48,8 +58,26 @@ export const handleShowModal = () => {
 
 const isNotShowOmitButton = () => seconds < secondsToShowOmitButton;
 
-export const stopAdd = (isAutomaticCloseModal) => {
-    if (!isAutomaticCloseModal || isNotShowOmitButton()) {
+export const stopAdd = () => {
+    const {
+        enabled,
+        timeout: {
+            closeModal: {
+                isAutomatic: isAutomaticCloseModal
+            }
+        }
+    } = ENVIRONMENT.adds;
+    if (!enabled) {
+        closeModalAdd();
+        return;
+    }
+
+    if (ElementOmitButtonAdd.textContent === TextCloseAdd) {
+        closeModalAdd();
+        return;
+    }
+
+    if (!isAutomaticCloseModal && isNotShowOmitButton()) {
         return;
     }
     seconds = 0;
@@ -57,26 +85,26 @@ export const stopAdd = (isAutomaticCloseModal) => {
     clearInterval(intervalAdd);
 }
 
-const iniShowModalAdd = (imagesAdd) => {
+const iniShowModalAdd = (srcAdds) => {
     ElementOmitButtonAdd.textContent = 'Omitir anuncio';
     showModalAdd();
-    handleCarrouselImgAdd(imagesAdd);
+    handleCarrouselImgAdd(srcAdds);
 }
 
 // :=> =================================================
 
-const handleCarrouselImgAdd = (imagesAdd) => {
+const handleCarrouselImgAdd = (srcAdds) => {
     const ELEMENT_MODAL_WRAPPER_ADD = document.getElementById('modal-wrapper-add');
-    if (!imagesAdd.length) {
+    if (!srcAdds.length) {
         return;
     }
-    if (imagesAdd.length === 1) {
-        ELEMENT_MODAL_WRAPPER_ADD.innerHTML = innerHtmlSingleImageAdd(imagesAdd[0]);
+    if (srcAdds.length === 1) {
+        ELEMENT_MODAL_WRAPPER_ADD.innerHTML = innerHtmlSingleImageAdd(srcAdds[0]);
         return;
     }
     ELEMENT_MODAL_WRAPPER_ADD.innerHTML = innerHtmlMultiImageAdd();
     const ELEMENT_CAROUSEL_ADD_CONTAINER = document.getElementById('carousel-add-crmg-container');
-    ELEMENT_CAROUSEL_ADD_CONTAINER.innerHTML = handleInnerHtmlItemsCarrouselAdd(imagesAdd);
+    ELEMENT_CAROUSEL_ADD_CONTAINER.innerHTML = handleInnerHtmlItemsCarrouselAdd(srcAdds);
     initCarrouselAdd();
 }
 
@@ -104,12 +132,12 @@ const innerHtmlMultiImageAdd = () =>
     id="carousel-add-crmg-container">
 </div>`;
 
-const handleInnerHtmlItemsCarrouselAdd = (imagesAdd) => {
+const handleInnerHtmlItemsCarrouselAdd = (srcAdds) => {
     let items = '';
-    imagesAdd.forEach(img => {
+    srcAdds.forEach(img => {
         items = `${items}
         <div class="item">
-            <img src="img/adds/${img}" class="add-img-container"/>
+            <img src="${img}" class="add-img-container"/>
         </div>`
     });
     return items;
@@ -129,16 +157,19 @@ const closeModalAdd = () => {
 }
 
 const initCounterShowOmitAddText = (leftSecond) => {
-    ElementOmitButtonAdd.textContent = `Omitir anuncio en ${leftSecond} s`;
+    ElementOmitButtonAdd.textContent = TextCounterBeforeOmitAdd.replace('LEFT_SECONDS', leftSecond);
 };
 
 const showOmitButtonAddText = () => {
-    ElementOmitButtonAdd.textContent = 'Omitir anuncio';
+    ElementOmitButtonAdd.textContent = TextOmitAdd;
     ElementOmitButtonAdd.style.background = '#ff0000';
 }
 
 export const openDetailAdd = () => {
+    const srcAdds = ENVIRONMENT.banner.items[currentIndexMainAdd].srcAdds;
     showOmitButtonAddText();
-    ElementOmitButtonAdd.textContent = 'Cerrar anuncio';
     showModalAdd();
+    handleCarrouselImgAdd(srcAdds);
+    ElementOmitButtonAdd.textContent = TextCloseAdd;
+    ElementOmitButtonAdd.style.background = '#ff0000';
 }

@@ -30,7 +30,7 @@ export const ENVIRONMENT = {
              * 
              * @Editable Isai
              */
-            showOmitButton: 20,
+            showOmitButton: 10,
             /**
              * Validaciones para cerrar el modal de publicidad
              */
@@ -85,5 +85,18 @@ export const ENVIRONMENT = {
                 ]
             }
         ]
+    },
+    bodySrcImg: {
+        timeoutChange: 8,
+        desktop: [
+            '../img/desktop.jpg'
+        ],
+        movil: [
+            '../img/adds/crmg-1.jpg',
+            '../img/movil.jpg',
+            '../img/adds/crmg-2.jpg'
+        ],
+        enabledAnimationFadeId: false,
+        timeoutFadeIn: 1,
     }
 }

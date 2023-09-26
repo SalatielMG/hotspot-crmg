@@ -10,6 +10,7 @@ import {
   ENVIRONMENT
 } from './conf/environment.js'
 
+let indexImgBody = 0;
 let ElementEyePassword;
 let ElementBTnScannerQr;
 const ElementBtnFreeTrial = document.querySelector('.btn-free-trial');
@@ -162,3 +163,69 @@ const innerHtmlNormalForm = () =>
   Escanear código <strong>QR</strong>
 </button>
 `;
+
+const handleBodyBackground = () => {
+  const {
+    timeoutChange
+  } = ENVIRONMENT.bodySrcImg;
+  let seconds = 0;
+  setInterval(() => {
+    if (seconds % timeoutChange === 0) {
+      determineSrcImgBody();
+    }
+    seconds++;
+  }, 1000);
+}
+
+const handleFadeInImgBody = (
+  isSetProperties = true
+) => {
+  const {
+    timeoutFadeIn
+  } = ENVIRONMENT.bodySrcImg;
+  [
+    '-webkit-animation',
+    '-moz-animation',
+    '-ms-animation',
+    '-o-animation',
+    'animation'
+  ].forEach(property => {
+    if (isSetProperties) {
+      document.body.style.setProperty(property, `fadein ${timeoutFadeIn}s`);
+    } else {
+      document.body.style.removeProperty(property);
+    }
+  });
+}
+
+const determineSrcImgBody = () => {
+  
+  const {
+    desktop,
+    movil,
+    timeoutFadeIn,
+    enabledAnimationFadeId
+  } = ENVIRONMENT.bodySrcImg;
+  const width = Number(window.innerWidth);
+  const srcImgs = width >= 1 && width <= 575 ? movil : desktop;
+  indexImgBody = (indexImgBody > (srcImgs.length - 1)) ? 0 : indexImgBody;
+  const srcImg = srcImgs[indexImgBody];
+  document.body.style.backgroundImage = `url('${srcImg}')`;
+  indexImgBody ++;
+  if (!enabledAnimationFadeId) {
+    return;
+  }
+  const secondsFadeIn = 0;
+  handleFadeInImgBody();
+  const intervalFadeIn = setInterval(() => {
+    if (intervalFadeIn >= timeoutFadeIn) {
+      handleFadeInImgBody(false);
+      clearInterval(intervalFadeIn);
+      return;
+    }
+    secondsFadeIn++;
+  }, 1000);
+}
+
+handleBodyBackground();
+window.onresize = determineSrcImgBody;

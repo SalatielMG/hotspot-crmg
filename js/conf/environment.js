@@ -85,5 +85,18 @@ export const ENVIRONMENT = {
                 ]
             }
         ]
+    },
+    bodySrcImg: {
+        timeoutChange: 8,
+        desktop: [
+            '../img/desktop.jpg'
+        ],
+        movil: [
+            '../img/adds/crmg-1.jpg',
+            '../img/movil.jpg',
+            '../img/adds/crmg-2.jpg'
+        ],
+        enabledAnimationFadeId: false,
+        timeoutFadeIn: 1,
     }
 }

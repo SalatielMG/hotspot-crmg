@@ -30,7 +30,7 @@ export const ENVIRONMENT = {
              * 
              * @Editable Isai
              */
-            showOmitButton: 20,
+            showOmitButton: 10,
             /**
              * Validaciones para cerrar el modal de publicidad
              */

@@ -164,7 +164,24 @@ const innerHtmlNormalForm = () =>
 </button>
 `;
 
+const handleCacheImg = () => {
+  const imagesSrc = [
+    ...ENVIRONMENT.bodySrcImg.movil,
+    ...(ENVIRONMENT.adds.enabled ? ENVIRONMENT.adds.srcAdds : []),
+    ...ENVIRONMENT.bodySrcImg.desktop
+  ];
+  let list = [];
+  for (let i = 0; i < imagesSrc.length; i++) {
+      let img = new Image();
+      img.onload = function() {
+      }
+      list.push(img);
+      img.src = imagesSrc[i];
+  }
+}
+
 const handleBodyBackground = () => {
+  handleCacheImg();
   const {
     timeoutChange
   } = ENVIRONMENT.bodySrcImg;
@@ -199,7 +216,6 @@ const handleFadeInImgBody = (
 }
 
 const determineSrcImgBody = () => {
-  
   const {
     desktop,
     movil,
@@ -212,19 +228,19 @@ const determineSrcImgBody = () => {
   const srcImg = srcImgs[indexImgBody];
   document.body.style.backgroundImage = `url('${srcImg}')`;
   indexImgBody ++;
-  if (!enabledAnimationFadeId) {
-    return;
-  }
-  const secondsFadeIn = 0;
-  handleFadeInImgBody();
-  const intervalFadeIn = setInterval(() => {
-    if (intervalFadeIn >= timeoutFadeIn) {
-      handleFadeInImgBody(false);
-      clearInterval(intervalFadeIn);
-      return;
-    }
-    secondsFadeIn++;
-  }, 1000);
+  // if (!enabledAnimationFadeId) {
+  //   return;
+  // }
+  // const secondsFadeIn = 0;
+  // handleFadeInImgBody();
+  // const intervalFadeIn = setInterval(() => {
+  //   if (intervalFadeIn >= timeoutFadeIn) {
+  //     handleFadeInImgBody(false);
+  //     clearInterval(intervalFadeIn);
+  //     return;
+  //   }
+  //   secondsFadeIn++;
+  // }, 1000);
 }
 
 handleBodyBackground();

@@ -44,9 +44,9 @@ export const ENVIRONMENT = {
          * @Editable Isai
          */
         srcAdds: [
-            'img/adds/crmg-1.jpg',
             'img/adds/crmg-2.jpg',
-            'img/adds/alan-ad.jpg'
+            'img/adds/crmg-1.jpg',
+            'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/alan/alan-ad.jpg'
         ],
         settingCarrousel: {
             /**
@@ -70,7 +70,7 @@ export const ENVIRONMENT = {
             {
                 title: 'INTERNET RESIDENCIAL',
                 whatsapp: '971 113 8916',
-                srcImg: 'img/slides/1.jpg',
+                srcImg: 'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/banners/1.jpg',
                 srcAdds: [
                     'img/adds/crmg-1.jpg',
                     'img/adds/crmg-2.jpg'
@@ -79,9 +79,9 @@ export const ENVIRONMENT = {
             {
                 title: 'SERVICIO TECNICO A EQUIPOS DE COMPUTO',
                 whatsapp: '971 174 5729',
-                srcImg: 'img/adds/alan-ad.jpg',
+                srcImg: 'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/alan/alan-ad.jpg',
                 srcAdds: [
-                    'img/adds/alan-ad.jpg'
+                    'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/alan/alan-ad.jpg'
                 ]
             }
         ]
@@ -89,12 +89,16 @@ export const ENVIRONMENT = {
     bodySrcImg: {
         timeoutChange: 8,
         desktop: [
-            '../img/desktop.jpg'
+            'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/backgrounds/desktop/desktop.jpg'
         ],
         movil: [
-            '../img/adds/crmg-1.jpg',
-            '../img/movil.jpg',
-            '../img/adds/crmg-2.jpg'
+            'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/backgrounds/movil/crmg-1.jpg',
+            'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/backgrounds/movil/crmg-2.jpg',
+            'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/backgrounds/movil/crmg-3.jpg',
+            'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/backgrounds/movil/crmg-4.jpg',
+            'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/backgrounds/movil/crmg-5.jpg',
+            'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/backgrounds/movil/crmg-6.jpg',
+            'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/backgrounds/movil/crmg-7.jpg',
         ],
         enabledAnimationFadeId: false,
         timeoutFadeIn: 1,

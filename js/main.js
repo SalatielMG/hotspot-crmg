@@ -244,4 +244,4 @@ const determineSrcImgBody = () => {
 }
 
 handleBodyBackground();
-window.onresize = determineSrcImgBody;
+// window.onresize = determineSrcImgBody;

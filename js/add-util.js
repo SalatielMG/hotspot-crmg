@@ -98,8 +98,12 @@ const handleCarrouselImgAdd = (srcAdds) => {
     if (!srcAdds.length) {
         return;
     }
-    if (srcAdds.length === 1) {
-        ELEMENT_MODAL_WRAPPER_ADD.innerHTML = innerHtmlSingleImageAdd(srcAdds[0]);
+        if (srcAdds.length === 1) {
+        ELEMENT_MODAL_WRAPPER_ADD.style.justifyContent = 'center';
+        const splitter = srcAdds[0].split('|');
+        const src = splitter[0];
+        const customClassImg = splitter.length > 1 ? splitter[1] : '';
+        ELEMENT_MODAL_WRAPPER_ADD.innerHTML = addImgAdd(src, customClassImg);
         return;
     }
     ELEMENT_MODAL_WRAPPER_ADD.innerHTML = innerHtmlMultiImageAdd();
@@ -122,11 +126,6 @@ const initCarrouselAdd = (settingCarrousel) => {
     });
 }
 
-const innerHtmlSingleImageAdd = (source) => 
-`<img class="add-img-container"
-    src="${source}"
->`;
-
 const innerHtmlMultiImageAdd = () => 
 `<div class="owl-carousel owl-theme"
     id="carousel-add-crmg-container">
@@ -135,13 +134,17 @@ const innerHtmlMultiImageAdd = () =>
 const handleInnerHtmlItemsCarrouselAdd = (srcAdds) => {
     let items = '';
     srcAdds.forEach(img => {
+        const splitter = img.split('|');
+        const src = splitter[0];
         items = `${items}
-        <div class="item">
-            <img src="${img}" class="add-img-container"/>
+        <div class="item custom-parent-center ${splitter.length > 1 ? splitter[1] : ''}">
+            ${addImgAdd(src)}
         </div>`
     });
     return items;
 }
+
+const addImgAdd = (src, customClass = '') => `<img src="${src}" class="add-img-container ${customClass}"/>`;
 
 // :=> =================================================
 

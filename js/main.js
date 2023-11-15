@@ -165,19 +165,30 @@ const innerHtmlNormalForm = () =>
 `;
 
 const handleCacheImg = () => {
-  const imagesSrc = [
-    ...ENVIRONMENT.bodySrcImg.movil,
-    ...(ENVIRONMENT.adds.enabled ? ENVIRONMENT.adds.srcAdds : []),
-    ...ENVIRONMENT.bodySrcImg.desktop
-  ];
-  let list = [];
-  for (let i = 0; i < imagesSrc.length; i++) {
-      let img = new Image();
-      img.onload = function() {
+  try {
+    const imagesSrc = [
+      ...ENVIRONMENT.bodySrcImg.movil,
+      ...(ENVIRONMENT.adds.enabled ? ENVIRONMENT.adds.srcAdds : []),
+      ...ENVIRONMENT.bodySrcImg.desktop
+    ].map(imgSrc => {
+      if (imgSrc.includes('|')) {
+        return imgSrc.split('|')[0];
       }
-      list.push(img);
-      img.src = imagesSrc[i];
+      return imgSrc
+    });
+    console.log('imagesSrc', imagesSrc);
+    let list = [];
+    for (let i = 0; i < imagesSrc.length; i++) {
+        let img = new Image();
+        img.onload = function() {
+        }
+        list.push(img);
+        img.src = imagesSrc[i];
+    }
+  } catch(error) {
+    console.error('error', error);
   }
+  
 }
 
 const handleBodyBackground = () => {

@@ -44,9 +44,8 @@ export const ENVIRONMENT = {
          * @Editable Isai
          */
         srcAdds: [
-            'img/adds/crmg-2.jpg',
-            'img/adds/crmg-1.jpg',
-            'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/alan/alan-ad.jpg'
+            'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-1.jpg|min-height-70',
+            'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-2.jpg',
         ],
         settingCarrousel: {
             /**
@@ -72,16 +71,16 @@ export const ENVIRONMENT = {
                 whatsapp: '971 113 8916',
                 srcImg: 'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/banners/1.jpg',
                 srcAdds: [
-                    'img/adds/crmg-1.jpg',
-                    'img/adds/crmg-2.jpg'
+                    'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-2.jpg',
+                    'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-1.jpg'
                 ]
             },
             {
                 title: 'SERVICIO TECNICO A EQUIPOS DE COMPUTO',
-                whatsapp: '971 174 5729',
-                srcImg: 'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/alan/alan-ad.jpg',
+                whatsapp: '971 113 8916',
+                srcImg: 'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-1.jpg',
                 srcAdds: [
-                    'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/alan/alan-ad.jpg'
+                    'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-1.jpg'
                 ]
             }
         ]
@@ -101,6 +100,6 @@ export const ENVIRONMENT = {
             'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/backgrounds/movil/crmg-7.jpg',
         ],
         enabledAnimationFadeId: false,
-        timeoutFadeIn: 1,
+        timeoutFadeIn: 1
     }
 }

@@ -133,7 +133,6 @@ const innerHtmlNormalForm = () =>
   <input
     name="username"
     type="text"
-    value="$(username)"
     placeholder="Usuario"
   />
 </label>

@@ -36,7 +36,7 @@ export const ENVIRONMENT = {
              */
             closeModal: {
                 isAutomatic: false,
-                timeout: 60
+                timeout: 20
             }
         },
         /**
@@ -45,7 +45,11 @@ export const ENVIRONMENT = {
          */
         srcAdds: [
             'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-1.jpg|min-height-70',
-            'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-2.jpg',
+            'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-2.png',
+            'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-3.png',
+            'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-4.png',
+            'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-5.png',
+            'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-6.png',
         ],
         settingCarrousel: {
             /**
@@ -71,8 +75,12 @@ export const ENVIRONMENT = {
                 whatsapp: '971 113 8916',
                 srcImg: 'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/banners/1.jpg',
                 srcAdds: [
-                    'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-2.jpg',
-                    'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-1.jpg'
+                    'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-1.jpg|min-height-70',
+                    'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-2.png',
+                    'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-3.png',
+                    'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-4.png',
+                    'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-5.png',
+                    'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-6.png',
                 ]
             },
             {
@@ -80,7 +88,7 @@ export const ENVIRONMENT = {
                 whatsapp: '971 113 8916',
                 srcImg: 'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-1.jpg',
                 srcAdds: [
-                    'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-1.jpg'
+                    'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-1.jpg|min-height-70',
                 ]
             }
         ]

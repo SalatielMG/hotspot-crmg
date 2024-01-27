@@ -175,7 +175,6 @@ const handleCacheImg = () => {
       }
       return imgSrc
     });
-    console.log('imagesSrc', imagesSrc);
     let list = [];
     for (let i = 0; i < imagesSrc.length; i++) {
         let img = new Image();

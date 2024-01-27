@@ -575,10 +575,14 @@ table td:first-child {
     to   { opacity: 1; }
 }
 
-.owl-item:has(.custom-parent-center) {
+/* .owl-item:has(.custom-parent-center) {
     display: flex;
     align-items: center;
     height: 100%;
+} */
+
+.custom-parent-center {
+    width: 100%;
 }
 
 .min-height-70 {

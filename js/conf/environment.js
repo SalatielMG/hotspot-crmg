@@ -47,9 +47,9 @@ export const ENVIRONMENT = {
             'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-1.jpg|min-height-70',
             'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-2.png',
             'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-3.png',
-            'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-4.png',
-            'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-5.png',
-            'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-6.png',
+            // 'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-4.png',
+            // 'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-5.png',
+            // 'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-6.png',
         ],
         settingCarrousel: {
             /**
@@ -66,7 +66,7 @@ export const ENVIRONMENT = {
             animateOut: "fadeOut",
             animateIn: "flipInX",
             autoplay: true,
-            autoplayTimeout: 3500,
+            autoplayTimeout: 5000,
             autoplayHoverPause: true
         },
         items: [
@@ -78,9 +78,9 @@ export const ENVIRONMENT = {
                     'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-1.jpg|min-height-70',
                     'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-2.png',
                     'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-3.png',
-                    'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-4.png',
-                    'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-5.png',
-                    'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-6.png',
+                    // 'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-4.png',
+                    // 'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-5.png',
+                    // 'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-6.png',
                 ]
             },
             {
@@ -94,17 +94,17 @@ export const ENVIRONMENT = {
         ]
     },
     bodySrcImg: {
-        timeoutChange: 8,
+        timeoutChange: 15,
         desktop: [
             'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/backgrounds/desktop/desktop.jpg'
         ],
         movil: [
-            'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/backgrounds/movil/crmg-1.jpg',
-            'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/backgrounds/movil/crmg-2.jpg',
-            'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/backgrounds/movil/crmg-3.jpg',
-            'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/backgrounds/movil/crmg-4.jpg',
-            'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/backgrounds/movil/crmg-5.jpg',
-            'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/backgrounds/movil/crmg-6.jpg',
+            // 'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/backgrounds/movil/crmg-1.jpg',
+            // 'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/backgrounds/movil/crmg-2.jpg',
+            // 'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/backgrounds/movil/crmg-3.jpg',
+            // 'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/backgrounds/movil/crmg-4.jpg',
+            // 'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/backgrounds/movil/crmg-5.jpg',
+            // 'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/backgrounds/movil/crmg-6.jpg',
             'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/backgrounds/movil/crmg-7.jpg',
         ],
         enabledAnimationFadeId: false,

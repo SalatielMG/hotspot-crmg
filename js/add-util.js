@@ -112,9 +112,9 @@ const handleCarrouselImgAdd = (srcAdds) => {
     initCarrouselAdd();
 }
 
-const initCarrouselAdd = (settingCarrousel) => {
-    const autoplayTimeout = settingCarrousel?.autoplayTimeout
-    ? settingCarrousel.autoplayTimeout : 3500;
+const initCarrouselAdd = () => {
+    const autoplayTimeout = ENVIRONMENT.adds.settingCarrousel?.autoplayTimeout
+    ? ENVIRONMENT.adds.settingCarrousel.autoplayTimeout : 3500;
     $('#carousel-add-crmg-container').owlCarousel({
         items: 1.0001,
         loop: true,

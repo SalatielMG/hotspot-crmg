@@ -168,7 +168,7 @@ const handleCacheImg = () => {
     const imagesSrc = [
       ...ENVIRONMENT.bodySrcImg.movil,
       ...(ENVIRONMENT.adds.enabled ? ENVIRONMENT.adds.srcAdds : []),
-      ...ENVIRONMENT.bodySrcImg.desktop
+      // ...ENVIRONMENT.bodySrcImg.desktop
     ].map(imgSrc => {
       if (imgSrc.includes('|')) {
         return imgSrc.split('|')[0];

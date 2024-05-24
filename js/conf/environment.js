@@ -45,8 +45,10 @@ export const ENVIRONMENT = {
          */
         srcAdds: [
             'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-1.jpg|min-height-70',
-            'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-2.png',
-            'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-3.png',
+            // 'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-2.png',
+            'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/backgrounds/movil/crmg-1.jpg',
+            // 'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-3.png',
+            'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/backgrounds/movil/crmg-6.jpg',
             // 'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-4.png',
             // 'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-5.png',
             // 'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-6.png',
@@ -72,12 +74,14 @@ export const ENVIRONMENT = {
         items: [
             {
                 title: 'INTERNET RESIDENCIAL',
-                whatsapp: '971 113 8916',
+                whatsapp: '971 107 8302',
                 srcImg: 'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/banners/1.jpg',
                 srcAdds: [
                     'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-1.jpg|min-height-70',
-                    'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-2.png',
-                    'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-3.png',
+                    // 'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-2.png',
+                    'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/backgrounds/movil/crmg-1.jpg',
+                    // 'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-3.png',
+                    'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/backgrounds/movil/crmg-6.jpg',
                     // 'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-4.png',
                     // 'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-5.png',
                     // 'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-6.png',
@@ -85,7 +89,7 @@ export const ENVIRONMENT = {
             },
             {
                 title: 'SERVICIO TECNICO A EQUIPOS DE COMPUTO',
-                whatsapp: '971 113 8916',
+                whatsapp: '971 107 8302',
                 srcImg: 'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-1.jpg',
                 srcAdds: [
                     'https://raw.githubusercontent.com/SalatielMG/crmg-resources/master/hotspot/img/adds/crmg/crmg-1.jpg|min-height-70',
